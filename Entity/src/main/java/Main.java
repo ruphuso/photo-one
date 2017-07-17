@@ -1,7 +1,7 @@
-import entity.User;
 import hibernateFactory.Factory;
+import entity.User;
 
-import java.sql.*;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {

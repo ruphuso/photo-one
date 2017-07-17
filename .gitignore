@@ -1,3 +1,5 @@
 .idea
 projDB.iml
 target
+WebApp/WebApp.iml
+src/test/
