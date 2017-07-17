@@ -1,11 +1,11 @@
 package interfaces;
 
-import entity.Comments;
+import entity.Comment;
 
 import java.sql.SQLException;
 
 public interface CommentDAO {
-    public void addComment(Comments comments) throws SQLException;
-    public void updateComment(Comments comments) throws SQLException;
-    public void deleteComment(Comments comments) throws SQLException;
+    public void addComment(Comment comment) throws SQLException;
+    public void updateComment(Comment comment) throws SQLException;
+    public void deleteComment(Comment comment) throws SQLException;
 }

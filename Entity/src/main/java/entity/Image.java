@@ -5,13 +5,16 @@ import javax.persistence.*;
 import java.util.Date;
 
 
+@Entity
+@Table (name = "image")
+
 public class Image  {
     private int idImage;
     private String imageName;
     private String path;
     private Date currentDate;
 
-    private User user;
+    //private User user;
 
     public Image() {
         path = null;
@@ -69,9 +72,9 @@ public class Image  {
         return currentDate + " " + imageName + " " + path;
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
+    //public void setUser(User user) {
+    //    this.user = user;
+    //}
 
 
 }

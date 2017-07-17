@@ -1,14 +1,18 @@
+import entity.Comment;
+import entity.Image;
 import hibernateFactory.Factory;
-import entity.User;
 
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.Scanner;
+
 
 public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        System.out.println("User");
+        /**
         User defaultUser = new User();
         System.out.println("Имя пользователя");
         defaultUser.setName(scanner.nextLine());
@@ -17,11 +21,41 @@ public class Main {
         System.out.println("Пароль");
         defaultUser.setPassword(scanner.next());
 
-            try {
-                Factory.getInstance().getUserDAO().addUser(defaultUser);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+        try {
+            Factory.getInstance().getUserDAO().addUser(defaultUser);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+         */
+
+        System.out.println("Comment");
+
+        Comment someComment = new Comment();
+        someComment.setCommentText("First comment");
+        someComment.setDateComment(new Date());
+
+        try {
+            Factory.getInstance().getCommentDAO().addComment(someComment);
+        } catch (SQLException e) {
+            e.printStackTrace();
 
         }
+
+        System.out.println("Image");
+
+        Image someImage = new Image();
+        someImage.setImageName("image1");
+        someImage.setPath("\\Images\\image.jpg");
+        someImage.setCurrentDate(new Date());
+
+        try {
+            Factory.getInstance().getImageDAO().addImage(someImage);
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+
+
+    }
+
 }

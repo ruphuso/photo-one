@@ -1,18 +1,18 @@
 package entity;
 
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import java.util.Date;
 
 
-    @Entity
-    @Table (name = "comments")
-    public class Comments {
+@Entity
+@Table (name = "comment")
+
+public class Comment {
         private int idComment;
         private Date dateComment;
         private String commentText;
-        private User user;
+        //private User user;
 
         @Id
         @GeneratedValue(generator = "increment")
@@ -46,11 +46,11 @@ import java.util.Date;
 
         @Override
         public String toString() {
-            return "Comments{" +
+            return "Comment{" +
                     "idComment=" + idComment +
                     ", dateComment=" + dateComment +
                     ", commentText='" + commentText + '\'' +
-                    ", user=" + user +
+                    ", user=" +
                     '}';
 
 

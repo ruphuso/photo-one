@@ -1,7 +1,7 @@
 package implementations;
 
 
-import entity.Comments;
+import entity.Comment;
 import hibernateFactory.HibernateSessionFactory;
 import interfaces.CommentDAO;
 import org.hibernate.Session;
@@ -12,10 +12,10 @@ public class CommentDAOImpl implements CommentDAO {
 
 
     @Override
-    public void addComment(Comments comments) throws SQLException {
+    public void addComment(Comment comment) throws SQLException {
         try (Session session = HibernateSessionFactory.getSessionFactory().openSession()) {
             session.beginTransaction();
-            session.save((comments));
+            session.save(comment);
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -24,10 +24,10 @@ public class CommentDAOImpl implements CommentDAO {
     }
 
     @Override
-    public void updateComment(Comments comments) throws SQLException {
+    public void updateComment(Comment comment) throws SQLException {
         try (Session session = HibernateSessionFactory.getSessionFactory().openSession();) {
             session.beginTransaction();
-            session.update(comments);
+            session.update(comment);
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -35,11 +35,11 @@ public class CommentDAOImpl implements CommentDAO {
     }
 
     @Override
-    public void deleteComment(Comments comments) throws SQLException {
+    public void deleteComment(Comment comment) throws SQLException {
 
         try (Session session = HibernateSessionFactory.getSessionFactory().openSession()) {
             session.beginTransaction();
-            session.delete((comments));
+            session.delete((comment));
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
