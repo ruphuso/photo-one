@@ -21,6 +21,7 @@
         </plugins>
     </build>
     <modules>
+        <module>entity</module>
         <module>WebApp</module>
     </modules>
 
